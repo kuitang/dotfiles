@@ -1,0 +1,9 @@
+[user]
+	name = Kui Tang
+	email = kuitang@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[alias]
+	co = checkout

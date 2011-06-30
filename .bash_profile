@@ -7,6 +7,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/usr/bin/vim'
 alias ttop='/usr/bin/top -ocpu -R -F -s 2 -n30'
 alias clj='rlwrap clj'
+alias t='~/Dropbox/dotfiles/todo.sh'
 
 function cd() {
   pushd "$1" >/dev/null

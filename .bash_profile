@@ -5,9 +5,13 @@ export DIRCOLORS=yes
 alias ls='ls -G'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/usr/bin/vim'
+
+# Now, the cool stuff.
 alias ttop='/usr/bin/top -ocpu -R -F -s 2 -n30'
 alias clj='rlwrap clj'
 alias t='~/Dropbox/dotfiles/todo.sh'
+alias klast='jobs -p | tail -n 1 | xargs kill && fg'
+alias to-txt='textutil -stdout -convert txt '
 
 function cd() {
   pushd "$1" >/dev/null

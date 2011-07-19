@@ -1,5 +1,5 @@
-set lines=59 columns=203
+set lines=59 columns=120
 set background=dark
-set guioptions=egmrt
+set guioptions=agmt
 "highlight Normal guibg=Black guifg=White
-colorscheme koehler
+colorscheme wombat

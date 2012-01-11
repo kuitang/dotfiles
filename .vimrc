@@ -1,16 +1,23 @@
 "Interface
+"https://github.com/davidbalbert/dotvim/blob/master/vimrc
 set showcmd
 set mouse=a
 set ruler
 syntax on
 set number
+set wildmenu
 "Searching
 set hlsearch
 set ignorecase
 set smartcase
 set showmatch
 set incsearch
+
 "TODO to test the task thingie
+
+"Tabs
+map <Leader>[ :tabp<CR>
+map <Leader>] :tabn<CR>
 
 "Specific extensions
 filetype on
@@ -22,6 +29,10 @@ autocmd BufEnter * NERDTreeMirror
 map <LEADER>e :NERDTreeToggle<CR>
 "After writing vimrc, reload.
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+
+"Autocompletes
+"let g:clang_periodic_quickfix=1
+"let g:clang_snippets=1
 
 "Shortcut the tags
 map <LEADER>r :TlistToggle<CR>
@@ -41,7 +52,8 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set shiftwidth=2
-set autoindent
+set cindent
+set cinoptions=h0,g0
 
 "Additional editing
 set showmatch
@@ -77,4 +89,7 @@ map <Leader>max :call ToggleMaxWins()<CR>
 "Python
 au FileType python setl shiftwidth=4 tabstop=4
 au FileType java setl shiftwidth=4 tabstop=4
+
+" :w!! reopens file as sudo and saves it
+cmap w!! %!sudo tee > /dev/null %
 

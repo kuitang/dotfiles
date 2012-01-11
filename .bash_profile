@@ -5,6 +5,10 @@ export DIRCOLORS=yes
 alias ls='ls -G'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/usr/bin/vim'
+alias flush='dscacheutil -flushcache'
+alias mongod='mongod run --config /usr/local/Cellar/mongodb/1.8.2-x86_64/mongod.conf'
+alias lookup='ssh -t kt2384@cunix.columbia.edu lookup'
+alias do-research='cd /Users/kuitang/Repo/CYG/llvm/llvm-2.9'
 
 # Now, the cool stuff.
 alias ttop='/usr/bin/top -ocpu -R -F -s 2 -n30'
@@ -13,16 +17,14 @@ alias t='~/Dropbox/dotfiles/todo.sh'
 alias klast='jobs -p | tail -n 1 | xargs kill && fg'
 alias to-txt='textutil -stdout -convert txt '
 
-function cd() {
-  pushd "$1" >/dev/null
-}
 function mcd() {
   mkdir -p "$1"
   cd "$1"
 }
-alias b=popd
 alias pkill=killall
 alias ll='ls -lah'
+
+export EDITOR=vim
 # Personal stuff
 function blog() {
   pushd ~/Dropbox/kui-tang.com

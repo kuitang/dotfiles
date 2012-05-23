@@ -3,19 +3,17 @@ export DIRCOLORS=yes
 
 # Interface
 alias ls='ls -G'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vi='/usr/bin/vim'
 alias flush='dscacheutil -flushcache'
-alias mongod='mongod run --config /usr/local/Cellar/mongodb/1.8.2-x86_64/mongod.conf'
 alias lookup='ssh -t kt2384@cunix.columbia.edu lookup'
-alias do-research='cd /Users/kuitang/Repo/CYG/llvm/llvm-2.9'
 
 # Now, the cool stuff.
+alias vi='/usr/bin/vim'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vimdiff='/Applications/MacVim.app/Contents/MacOS/Vim -d'
 alias ttop='/usr/bin/top -ocpu -R -F -s 2 -n30'
 alias clj='rlwrap clj'
-alias t='~/Dropbox/dotfiles/todo.sh'
 alias klast='jobs -p | tail -n 1 | xargs kill && fg'
-alias to-txt='textutil -stdout -convert txt '
+alias to_txt='textutil -stdout -convert txt '
 
 function mcd() {
   mkdir -p "$1"
@@ -26,15 +24,6 @@ alias ll='ls -lah'
 
 export EDITOR=vim
 # Personal stuff
-function blog() {
-  pushd ~/Dropbox/kui-tang.com
-  ./write.sh $1 $2
-  popd
-}
-
-# Git
-alias push='git push origin master'
-alias pull='git pull origin master'
 
 case $TERM in
   xterm*|rxvt*)
@@ -54,4 +43,16 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 export GEM_HOME="$(brew --prefix)/Cellar/gems/1.8"
 
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="/Applications/MATLAB_R2011b.app/bin:/usr/local/texlive/2010/bin/x86_64-darwin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Setting PATH for EPD-7.2-1
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/EPD64.framework/Versions/Current/bin:${PATH}"
+export PATH
+
+# We have Python modules (namely, mpi.so) in /usr/local/lib
+export PYTHONPATH="/usr/local/lib:$PYTHONPATH"
+
+#MKL_NUM_THREADS=2
+#export MKL_NUM_THREADS
+

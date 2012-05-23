@@ -1,0 +1,29 @@
+set t_Co=256
+set guifont=Monaco:h12
+"colorscheme calmar256-light
+colorscheme wombat256mod
+set transparency=0
+set wrap
+let g:clang_complete_lib_flags = 0
+let g:neocomplcache_clang_use_library = 1
+let g:neocomplcache_clang_macros = 1
+let g:neocomplcache_clang_patterns = 1
+
+" Don't conceal so aggresively.
+set conceallevel=1
+set concealcursor=""
+
+" I prefer 2-space indents for everything exception python and java.
+"Indentation
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set cindent
+set cinoptions=h0,g0
+
+au FileType python setl shiftwidth=4 tabstop=4 softtabstop=4
+au FileType java setl shiftwidth=4 tabstop=4 softtabstop=4
+
+Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/neocomplcache-clang'
+

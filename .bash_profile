@@ -19,6 +19,15 @@ function mcd() {
   mkdir -p "$1"
   cd "$1"
 }
+
+function doi() {
+  curl -s -LH "Accept: text/bibliography; style=bibtex" http://dx.doi.org/$1
+}
+
+function doicp() {
+  doi $1 | pbcopy
+}
+
 alias pkill=killall
 alias ll='ls -lah'
 
